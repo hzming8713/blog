@@ -5,8 +5,8 @@
     
     <entry>
       <title>Coding-Pages + Hexo 博客搭建</title>
-      <link href="/2019/06/27/%E6%B4%AA%E5%BC%A0%E6%98%8E/"/>
-      <url>/2019/06/27/%E6%B4%AA%E5%BC%A0%E6%98%8E/</url>
+      <link href="/2019/06/27/Blog-Hexo/"/>
+      <url>/2019/06/27/Blog-Hexo/</url>
       
         <content type="html"><![CDATA[<p>参考：<br>    <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a><br>    <a href="https://www.jianshu.com/p/a19962485b4a" target="_blank" rel="noopener">https://www.jianshu.com/p/a19962485b4a</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>1.自行注册Coding账号、安装node.js(npm)、Git Bash2.新建文件夹blog     $ touch blog3.安装hexo：$ npm install -g hexo  # 若npm太慢可自行安装cnpm4.初始化 $ hexo init5.本地打开查看是否运行成功    $ hexo g    # hexo generate    $ hexo s    # hexo serverhttp://localhost:4000 查看效果</code></pre><h1 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h1><pre><code>clone主题到themes文件夹下    $ git clone git@github.com:iissnan/hexo-theme-next.git themes/next1）安装好后，修改根目录下的_config.yml配置文件的theme属性为主题文件夹名 如：next    注意：Hexo有两个config.yml文件，一个在根目录，一个在theme主题下。2）清除缓存，应用主题    $ hexo clean # 清除缓存 网页正常情况下可以忽略此条命令    $ hexo g    $ hexo s # 运行</code></pre><h1 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h1><pre><code>根目录下的_config.yml:    deploy:        type: git        repository:            coding: git@git.coding.net:nlbsn/blog.git            #github: git@git.github.net:***/***.git     #还可以github也一起        branch: master在博客的source/目录下需要创建一个空白文件,至于原因，是因为 coding.net需要这个文件来作为以静态文件部署的标志。就是说看到这个Staticfile就知道按照静态文件来发布。coding还需要在根目录下建一个.nojekyll空文件（coding page 配置hexo报错 the xx theme not be found 在根目录下建一个.nojekyll空文件就可以了，因为Coding默认支持Jekyll搭建网站）    $ cd source/    $ touch Staticfile     $ cd ../    $ touch .nojekyll</code></pre><h1 id="codingPages自动部署"><a href="#codingPages自动部署" class="headerlink" title="codingPages自动部署"></a>codingPages自动部署</h1><pre><code>1.$ npm install hexo-deployer-git --save    # 安装这个，要不之后会报错error deployer not found:git2.$ hexo clean      # 清除缓存  $ hexo d -g       # hexo d || hexo deploy -global</code></pre>]]></content>
       
