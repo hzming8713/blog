@@ -54,7 +54,7 @@ searchField.addEventListener('mousewheel',(e) => {
 var searchJson;
 var caseSensitive = false
 
-searchButton.addEventListener('click', () => {
+searchButton.addEventListener('click',() => {
     search()
 });
 
